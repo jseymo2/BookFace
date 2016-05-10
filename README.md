@@ -1,2 +1,2 @@
 # BookFace
-This is the read me.
+Repository for BookFace social media site.
