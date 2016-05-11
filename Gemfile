@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+
+# ActiveAdmin
+gem 'activeadmin', github: 'activeadmin'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
