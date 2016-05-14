@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <%= image_tag("books/#{@book.image_name}.jpg", alt: 'Example', class: "img-responsive") %>
+    </div>
+    <div class="col-sm-4">
+      	<p>
+			By: <%= @book.author %>
+		</p>
+		<p>
+			<%= @book.genre %>
+		</p>
+		<p>
+			<%= @book.description %>
+		</p>
+    </div>
+    <div class="col-sm-4">
+      One of three columns
+    </div>
+  </div>
+</div>
