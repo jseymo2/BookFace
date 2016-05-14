@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :favorite_books
 
+
   authenticated :user do
     root to: 'home#index', as: 'home'
   end
