@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] %></p>
+<% end %>
+
 <h1>Browse Books</h1>
 
 <%= will_paginate %>
@@ -17,7 +21,7 @@
         <td><%= book.name %></td>
         <td><%= book.author %></td>
         <td><%= book.genre %></td>
-        <td><%= link_to "Add to favorites", favorite_books_path(:book_id => book.id, :user_id => current_user.id), :method => :post %></td>
+        <td><%= link_to "Add to favorites", favorite_books_path(:book_id => book.id, :user_id => current_user.id, :book_name => book.name), :action => :create, :method => :post %></td>
     </tr>
   <% end %>
 </table>
