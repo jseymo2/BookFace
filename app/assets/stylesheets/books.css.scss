@@ -1,4 +1,14 @@
 td
 {
-    padding: 0 15px 0 15px;
+    padding: 0 15px 5px 0;
+}
+
+img.book_cover
+{
+	width: 60px;
+	height: 80px;
+}
+
+div.pagination, ul.pagination {
+	display: inline-block !important;
 }

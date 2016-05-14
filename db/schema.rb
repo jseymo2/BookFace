@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160511230846) do
+ActiveRecord::Schema.define(version: 20160513210045) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160511230846) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "genre_id"
+    t.string   "image_name"
   end
 
   add_index "books", ["author_id"], name: "index_books_on_author_id"
