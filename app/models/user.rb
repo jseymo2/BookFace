@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :events
 
+  has_many :favorite_books
+  has_many :books, through: :favorite_books
+
   mount_uploader :avatar, AvatarUploader
   mount_uploader :cover, AvatarUploader
 

@@ -9,19 +9,15 @@
     <th>AUTHOR</th>
     <th>GENRE</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
   <% @books.each do |book| %>
     <tr>
-    <td><%= image_tag("books/#{book.image_name}.jpg", alt: 'Example', class: "book_cover") %></td>
-      <td><%= book.name %></td>
-      <td><%= book.author %></td>
-      <td><%= book.genre %></td>
-      <td><%= link_to "Show", book %></td>
-      <td><%= link_to "Edit", edit_book_path(book) %></td>
-      <td><%= link_to "Remove", book, method: :delete, data: { confirm: "Are you sure?" } %></td>
+      <td class="book_img"><%= image_tag("books/#{book.image_name}.jpg", alt: 'Example', class: "book_cover") %></td>
+        <td><%= book.name %></td>
+        <td><%= book.author %></td>
+        <td><%= book.genre %></td>
+        <td><%= link_to "Add to favorites", favorite_books_path(:book_id => book.id, :user_id => current_user.id), :method => :post %></td>
     </tr>
   <% end %>
 </table>

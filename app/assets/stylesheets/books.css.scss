@@ -3,6 +3,10 @@ td
     padding: 0 15px 5px 0;
 }
 
+td.book_img {
+	padding: 5px;
+}
+
 img.book_cover
 {
 	width: 60px;
@@ -11,4 +15,8 @@ img.book_cover
 
 div.pagination, ul.pagination {
 	display: inline-block !important;
+}
+
+tr {
+	border-bottom: 2px solid #A0A0A0;
 }

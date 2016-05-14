@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513210045) do
+ActiveRecord::Schema.define(version: 20160514014844) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -111,6 +111,15 @@ ActiveRecord::Schema.define(version: 20160513210045) do
   add_index "events", ["cached_votes_up"], name: "index_events_on_cached_votes_up"
   add_index "events", ["comments_count"], name: "index_events_on_comments_count"
   add_index "events", ["user_id"], name: "index_events_on_user_id"
+
+  create_table "favorite_books", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favorite_books", ["user_id"], name: "index_favorite_books_on_user_id"
 
   create_table "follows", force: :cascade do |t|
     t.integer  "followable_id",                               null: false
