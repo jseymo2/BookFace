@@ -19,6 +19,13 @@
       <%= @user.location %>
     </h5>
   <% end %>
+  <% if @favorite_books.present? %>
+    <h5>
+      <%= fa_icon 'star' %>Favorite Books<br /><br />
+      <!--This is a test. -->
+      <%= render 'shared/favorites', favorite_books: @favorite_books %>
+    </h5>
+  <% end %>
   <br>
   <div class="text-center">
     <% unless is_current_user?(@user) %>

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   resources :favorite_books
 
+  # the name of the route is specified with the :as parameter
+  get 'favorite_books/show/:user' => 'favorite_books#show', :as => :show_favorite_books
 
   authenticated :user do
     root to: 'home#index', as: 'home'

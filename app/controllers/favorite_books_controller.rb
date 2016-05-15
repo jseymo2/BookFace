@@ -20,6 +20,10 @@ class FavoriteBooksController < ApplicationController
     
   end
 
+  def show
+
+  end
+
 
 
 end

@@ -1,0 +1,17 @@
+<table>
+
+  <% @favorite_books[0..8].in_groups_of(3, false).each do |group| %>
+
+    <tr>     
+        
+        <% group.each do |book| %>
+          <td>
+            <%= image_tag("books/#{book.image_name}.jpg", alt: 'Example', class: "book_cover") %>
+          </td>
+        <% end %>
+
+    </tr>
+
+  <% end %>
+</table>
+<%= link_to "See all", show_favorite_books_path(@user) %>

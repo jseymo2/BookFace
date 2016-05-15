@@ -10,6 +10,18 @@ class UsersController < ApplicationController
 
   def show
     @activities = PublicActivity::Activity.where(owner: @user).order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @favorite_books = []
+    @favorite_books_ids = FavoriteBook.where(user_id: @user.id)
+
+    @favorite_books_ids.each do |faves|
+      @favorite_books.push(Book.find(faves.book_id))
+    end
+      
+    end
+  end
+
+  def favorites
+    
   end
 
   def edit
@@ -47,4 +59,4 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-end
+
