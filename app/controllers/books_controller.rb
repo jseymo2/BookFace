@@ -4,4 +4,5 @@ class BooksController < ApplicationController
     @books = Book.paginate(:page => params[:page], :per_page => 15)
   end
 
+
 end

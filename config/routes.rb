@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :events, except: [:edit, :update]
 
   resources :favorite_books
-
+  resources :authors
 
   authenticated :user do
     root to: 'home#index', as: 'home'
