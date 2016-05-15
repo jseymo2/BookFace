@@ -14,5 +14,5 @@ class BooksController < ApplicationController
     flash[:notice] = "Comment successfully added."
     redirect_to :back
   end
-
+  
 end
