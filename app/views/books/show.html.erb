@@ -15,7 +15,17 @@
 		</p>
     </div>
     <div class="col-sm-4">
-      One of three columns
+    	<p>
+    		Rating: <%= @book.get_likes.size - @book.get_dislikes.size %> / <%= @book.votes_for.size %>
+    		<br>
+    		<a href="#" onclick="<%= @book.liked_by(current_user) %>">Vote Up</a>
+    		<br>
+    		<a href="#" onclick="<%= @book.disliked_by current_user %>">Vote Down</a>
+    		<br>
+    		<a href="#" onclick="<%= @book.undisliked_by current_user %>">Unvote Down</a>
+    		<br>
+    		<a href="#" onclick="<%= @book.unliked_by current_user %>">Unvote Up</a>
+    	</p>
     </div>
   </div>
 </div>
