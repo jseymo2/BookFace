@@ -1,21 +1,35 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <%= image_tag("books/#{@book.image_name}.jpg", alt: 'Example', class: "img-responsive") %>
+<div class="container" style = "font-size: 20px;">
+  <div class="row" style="margin-bottom: 5px">
+    <div class="col-sm-4" style="margin-bottom: 20px;">
+      <%= image_tag("books/#{@book.image_name}.jpg", alt: 'Example', class: "img-responsive") %><br />
+      Book Rating: <%= rating_for @book, "book_rating", :disable_after_rate => false %>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4" style="margin-top: 20px">
       	<p>
-			By: <%= @book.author %>
-		</p>
-		<p>
-			<%= @book.genre %>
-		</p>
-		<p>
-			<%= @book.description %>
-		</p>
-    </div>
-    <div class="col-sm-4">
-      Book Rating: <%= rating_for @book, "book_rating" %>
+    			By: <%= @book.author %>
+    		</p>
+    		<p>
+    			<%= @book.genre %>
+    		</p>
+    		<p>
+    			<%= @book.description %>
+    		</p>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <strong>Comments</strong>
+      <%= form_tag "/books/add_new_comment", method: "post" do %>
+        <%= hidden_field_tag :book_id, @book.id %>
+        <%= text_area_tag :comment, "", size: "30x3" %><br />
+        <%= submit_tag "Post Comment" %>
+      <% end %>
+      <br />
+      <br />
+
+      <%= render 'shared/comments', comments: @comments %>
+    </div>
+  </div>
+  
 </div>

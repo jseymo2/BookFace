@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
 
   self.per_page = 10
 
+  def to_s
+    "#{name}"
+  end
+
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 end

@@ -6,6 +6,7 @@ class Book < ActiveRecord::Base
   has_many :users, through: :favorite_books
 
   ratyrate_rateable 'book_rating'
+  acts_as_commentable
 
   def to_s
     "#{name}"

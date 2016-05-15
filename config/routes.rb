@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     root 'home#front'
   end
 
+  match 'books/add_new_comment' => 'books#add_new_comment', :as => "add_new_comment_to_books", :via => [:post]
+
   match :follow, to: 'follows#create', as: :follow, via: :post
   match :unfollow, to: 'follows#destroy', as: :unfollow, via: :post
   match :like, to: 'likes#create', as: :like, via: :post

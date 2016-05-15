@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515163247) do
+ActiveRecord::Schema.define(version: 20160515183144) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(version: 20160515163247) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "book_comments", force: :cascade do |t|
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "book_comments", ["book_id"], name: "index_book_comments_on_book_id"
 
   create_table "books", force: :cascade do |t|
     t.string   "name"
