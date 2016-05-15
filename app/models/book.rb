@@ -5,6 +5,8 @@ class Book < ActiveRecord::Base
   has_many :favorite_books
   has_many :users, through: :favorite_books
 
+  ratyrate_rateable 'book_rating'
+
   def to_s
     "#{name}"
   end
