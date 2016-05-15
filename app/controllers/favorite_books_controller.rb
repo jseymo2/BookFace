@@ -21,7 +21,13 @@ class FavoriteBooksController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user])
+    @favorite_books = []
+    @favorite_books_ids = FavoriteBook.where(user_id: @user.id)
 
+    @favorite_books_ids.each do |faves|
+      @favorite_books.push(Book.find(faves.book_id))
+    end
   end
 
 
