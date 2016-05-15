@@ -3,21 +3,20 @@ class FavoriteBooksController < ApplicationController
   layout 'application'
 
   def create
-
-    favorite_book = FavoriteBook.create(user_id: params[:user_id], book_id: params[:book_id])
-
-
-
-    if favorite_book
-      flash[:notice] = "#{params[:book_name]} has been successfully added to your favorites list."
-      redirect_to :back
-
+    favorite_book = FavoriteBook.find_by user_id: params[:user_id], book_id: params[:book_id]
+    if favorite_book.nil?
+      favorite_book = FavoriteBook.create(user_id: params[:user_id], book_id: params[:book_id])
+      if favorite_book
+        flash[:notice] = "#{params[:book_name]} has been successfully added to your favorites list."
+        redirect_to :back
+      else
+        flash[:alert] = "Error adding #{params[:book_name]} to your favorites list."
+        redirect_to :back
+      end
     else
-
-      flash[:notice] = "#{params[:book_name]} has already been added to your favorite list."
-      redirect_to books_path notice: favorite_book.errors.full_messages.first
-    end
-    
+      flash[:alert] = "#{params[:book_name]} is already in your favorites list."
+      redirect_to :back
+    end    
   end
 
   def destroy
