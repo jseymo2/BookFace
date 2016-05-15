@@ -20,6 +20,14 @@ class FavoriteBooksController < ApplicationController
     
   end
 
+  def destroy
+    book = Book.find(params[:id])
+    favorite_book = FavoriteBook.find_by user_id: params[:user_id], book_id: params[:id]
+    favorite_book.destroy
+    flash[:notice] = "#{book} has been successfully deleted from your favorites' list."
+    redirect_to :back
+  end
+
   def show
     @user = User.find(params[:user])
     @favorite_books = []

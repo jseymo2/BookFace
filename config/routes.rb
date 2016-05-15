@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   # the name of the route is specified with the :as parameter
   get 'favorite_books/show/:user' => 'favorite_books#show', :as => :show_favorite_books
+  delete '/favorite_books/:book_id' => 'favorite_books#destroy', :as => :delete_favorite_book
 
   authenticated :user do
     root to: 'home#index', as: 'home'

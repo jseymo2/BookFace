@@ -4,4 +4,8 @@ class Book < ActiveRecord::Base
 
   has_many :favorite_books
   has_many :users, through: :favorite_books
+
+  def to_s
+    "#{name}"
+  end
 end

@@ -6,7 +6,9 @@
         
         <% group.each do |book| %>
           <td>
+          <%= link_to book_path(book) do %>
             <%= image_tag("books/#{book.image_name}.jpg", alt: 'Example', class: "book_cover") %>
+          <% end %>
           </td>
         <% end %>
 
