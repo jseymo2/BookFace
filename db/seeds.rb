@@ -8,6 +8,9 @@
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
+User.create!(name: 'James Doe', email: 'jdoe@example.com', password: 'password', password_confirmation: 'password')
+User.create!(name: 'Jane Doe', email: 'janedoe@example.com', password: 'password', password_confirmation: 'password')
+
 ya = Genre.create! :name => "Young Adult"
 humor = Genre.create! :name => "Humor"
 gnovel = Genre.create! :name => "Graphic Novel"
