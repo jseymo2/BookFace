@@ -1,7 +1,7 @@
 <div class="container" style = "font-size: 20px;">
   <div class="row" style="margin-bottom: 5px">
     <div class="col-sm-4" style="margin-bottom: 20px;">
-      <%= image_tag("books/#{@book.image_name}.jpg", alt: 'Example', class: "img-responsive") %><br />
+      <%= image_tag("books/#{@book.image_name}.jpg", size: "257x388", alt: 'Example', class: "img-responsive") %><br />
       Book Rating: <%= rating_for @book, "book_rating", :disable_after_rate => false %>
     </div>
     <div class="col-sm-4" style="margin-top: 20px">

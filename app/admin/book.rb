@@ -13,6 +13,8 @@ ActiveAdmin.register Book do
 #   permitted
 # end
 
+  permit_params :name, :price, :author_id, :genre_id, :image_name, :description
+
   filter :name
   filter :author, :as => :check_boxes
   filter :genre, :as => :check_boxes
