@@ -16,7 +16,7 @@
       <td class="book_img"><%= image_tag("books/#{book.image_name}.jpg", alt: 'Example', class: "book_cover") %></td>
         <td><%= book.name %></td>
         <td><%= link_to book.author, author_path(:id => book.author_id)%></td>
-        <td><%= book.genre %></td>
+        <td><%= link_to book.genre, genre_path(:id => book.genre)%></td>
         <td><%= link_to "Add to favorites", favorite_books_path(:book_id => book.id, :user_id => current_user.id, :book_name => book.name), :action => :create, :method => :post %></td>
     </tr>
   <% end %>
