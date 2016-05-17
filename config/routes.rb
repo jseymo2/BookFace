@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   delete '/favorite_books/:book_id' => 'favorite_books#destroy', :as => :delete_favorite_book
 
   resources :authors
-
+  resources :genres
+  
   authenticated :user do
     root to: 'home#index', as: 'home'
   end
